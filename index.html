@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Live stock price ticker</title>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+    <script>
+      $(function () {
+        var socket = io();
+
+        socket.on('stock price reyiz', function(stockprice) {
+          $('#stockprice').text(stockprice);
+        });
+
+      });
+    </script>
+
+  </head>
+  <body>
+    Stock price: <span id="stockprice">no data yet</span>
+  </body>
+</html>
